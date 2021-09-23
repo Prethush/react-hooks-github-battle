@@ -16,8 +16,8 @@ function Main(props){
     return (
         <div className={darkMode ? "bg-gray-900 text-white min-h-screen": ""}>
         <BrowserRouter>
+            < Header handleClick={handleClick} darkMode={darkMode}/>
             <Switch>
-                < Header handleClick={handleClick} darkMode={darkMode}/>
                 < Route path="/" exact>
                     < Category darkMode={darkMode}/>
                 </Route>

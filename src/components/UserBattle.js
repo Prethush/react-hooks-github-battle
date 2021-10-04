@@ -15,9 +15,10 @@ function UserBattle(props) {
 
     return (
         <main>
+            {/* Display battle results */}
             <section className="pb-12 flex justify-center">
             <div className="flex flex-col sm:flex-row sm:justify-center mt-16">
-                <div className={props.darkMode ? "my-4 bg-gray-600 sm:flex-35 p-6 rounded-md mx-8" : "sm:flex-35 bg-gray-300 p-6 rounded-md mx-8 my-8"}>
+                <div className={"sm:flex-35 bg-gray-300 p-6 rounded-md mx-8 my-8" + (props.darkMode ? " bg-gray-600" : "")}>
 
                     <h2 className="text-center text-3xl mb-4">Winner</h2> 
                         <div>
@@ -48,7 +49,7 @@ function UserBattle(props) {
                     </div> 
             
 
-                <div className={props.darkMode ? "my-4 bg-gray-600 flex-35 p-6 rounded-md mx-8" : "sm:flex-35 bg-gray-300 p-6 rounded-md mx-8 my-8"}>
+                <div className={"sm:flex-35 bg-gray-300 p-6 rounded-md mx-8 my-8" + (props.darkMode ? " bg-gray-600" : "")}>
                         <h2 className="text-center text-3xl mb-4">Loser</h2> 
                         <div>
                             <img src={loser.avatar_url} alt={winner.login} className="w-full"/>
@@ -78,6 +79,7 @@ function UserBattle(props) {
                     </div> 
             </div>
         </section>
+        {/* go back to previous page */}
             <div className="text-center pb-20">
                     <Link to="/battle">
                         <h3 className="inline-block bg-black text-white py-3 px-8 rounded-md font-bold">Reset</h3>

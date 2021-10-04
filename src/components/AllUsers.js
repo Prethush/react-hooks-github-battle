@@ -1,7 +1,8 @@
 
 function AllUsers(props) {
     return (
-            <div className={props.darkMode ? "flex-100 sm:flex-50 lg:flex-30  2xl:flex-25 bg-gray-600 m-2 my-4 p-6 rounded-md": "flex-100 sm:flex-50 lg:flex-30 2xl:flex-25 bg-gray-200 m-2 p-6 rounded-md"}>
+            // Display the data based on the category selected
+            <div className={"flex-100 sm:flex-50 lg:flex-30 2xl:flex-25 bg-gray-200 m-2 p-6 rounded-md" + (props.darkMode ? " bg-gray-600": "")}>
            <h2 className="text-3xl text-center">#{props.score}</h2>
            <div className="mt-3 mb-1">
                <img src={props.owner.avatar_url} alt={props.owner.login} className="w-40 mx-auto"/>

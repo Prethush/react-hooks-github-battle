@@ -13,8 +13,9 @@ function Header(props){
                     <h3 className="inline-block text-xl ml-6 font-bold">Battle</h3>
                 </NavLink>
             </div>
+            {/* Dark mode  */}
             <div className="mr-24 my-4">
-                <i className={props.darkMode ? "fas fa-lightbulb text-2xl text-yellow-400": "fas fa-lightbulb text-2xl"} onClick={props.handleClick}></i>
+                <i className={"fas fa-lightbulb text-2xl" + (props.darkMode ? " text-yellow-400": "")} onClick={props.handleClick}></i>
             </div>
         </header>  
     );

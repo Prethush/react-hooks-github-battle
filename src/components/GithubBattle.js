@@ -14,6 +14,7 @@ function GithubBattle(props) {
     let [closeUser1Data, setCloseUser1Data] = useState(true);
     let [closeUser2Data, setCloseUser2Data] = useState(true);
    
+    //submit function
     const handleSubmit = (event) => {
         event.preventDefault();
        let id = event.target.dataset.id;
@@ -36,7 +37,7 @@ function GithubBattle(props) {
        })
     } 
  }
-
+    //to handle input element onChange event
     const hadleChange = ({target}) => {
         let {value} = target;
        let id = target.dataset.id;
@@ -48,12 +49,14 @@ function GithubBattle(props) {
        }
     }
 
+    //to handle keyDown event
     const handleKeyPress = (event) => {
         if(event.target === 13){
             handleSubmit(event);
         }  
     }
 
+    //close user data
     const closeUserData = ({target}) => {
         let id = target.dataset.id;
         if(id === "user1"){
@@ -74,21 +77,21 @@ function GithubBattle(props) {
                 <div className="flex flex-wrap justify-around">
                     <div className="flex flex-50  xl:flex-30 flex-col items-center my-3 mr-4">
                         <h3 className="text-center text-2xl">Enter two Github users</h3>
-                        <div className={props.darkMode ?  "bg-gray-600 h-64  text-center w-64 flex justify-center items-center my-3":"bg-gray-300 h-64  text-center w-64 flex justify-center items-center my-3"}>
+                        <div className={"bg-gray-300 h-64  text-center w-64 flex justify-center items-center my-3" + (props.darkMode ?  " bg-gray-600 ": "")}>
                             <i className="fas fa-users text-9xl text-red-400"></i>
                         </div>
                     </div>
                     
                     <div className="flex flex-50 xl:flex-30 flex-col items-center my-3 mr-4">
                         <h3 className="text-center text-2xl">Battle</h3>
-                        <div className={props.darkMode ?  "bg-gray-600 h-64  text-center w-64 flex justify-center items-center my-3":"bg-gray-300 h-64  text-center w-64 flex justify-center items-center my-3"}>
+                        <div className={"bg-gray-300 h-64  text-center w-64 flex justify-center items-center my-3" + (props.darkMode ?  " bg-gray-600 ": "")}>
                             <i className="fas fa-fighter-jet text-9xl text-gray-500"></i>
                         </div>
                     </div>
 
                     <div className="flex flex-50 xl:flex-30 flex-col items-center my-3 mr-4">
                         <h3 className="text-center text-2xl">See the winner</h3>
-                        <div className={props.darkMode ?  "bg-gray-600 h-64  text-center w-64 flex justify-center items-center my-3":"bg-gray-300 h-64  text-center w-64 flex justify-center items-center my-3"}>
+                        <div className={"bg-gray-300 h-64  text-center w-64 flex justify-center items-center my-3" + (props.darkMode ?  " bg-gray-600 ": "")}>
                             <i className="fas fa-trophy text-9xl text-yellow-400"></i>
                         </div>
                     </div>
@@ -100,7 +103,8 @@ function GithubBattle(props) {
                 <div className="flex flex-col items-center justify-center xl:flex-row xl:justify-between mt-6">
                     < Players data1={data1} data2={data2} inputText1={inputText1} inputText2={inputText2} hideForm1={hideForm1} hideForm2={hideForm2} handleChange={hadleChange} handleSubmit={handleSubmit} handleKeyPress={handleKeyPress} closeUserData={closeUserData} darkMode={props.darkMode} closeUser1Data={closeUser1Data} closeUser2Data={closeUser2Data}/>
                 </div>
-
+                
+                {/* go to userbattle page when the battle button is clicked */}
                 <div className="text-center py-12">
                     < Link to= {{
                         pathname: "/userbattle",

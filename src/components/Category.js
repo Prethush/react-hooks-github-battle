@@ -12,7 +12,7 @@ function Category(props){
         .then((res) => res.json())
         .then((data) => setData(data.items));
     }, [lang]);
-
+    
     const handleClick = ({target}) => {
        let id = target.dataset.id;
         setData(null);
